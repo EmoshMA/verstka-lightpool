@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  background-image: url(images/bg.png);
+
+}
+
+.container {
+  height: 100%;
+  background: #87ceeb;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #000;
+}
+
+#menu__toggle {
+  opacity: 0;
+}
+
+/* стилизуем кнопку */
+.menu__btn {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  left: 1745px;
+  width: 24px;
+  height: 175px;
+  cursor: pointer;
+  z-index: 1;
+  scale: 3;
+}
+
+/* добавляем "гамбургер" */
+.menu__btn>span,
+.menu__btn>span::before,
+.menu__btn>span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+}
+
+.menu__btn>span::before {
+  content: '';
+  top: -8px;
+}
+
+.menu__btn>span::after {
+  content: '';
+  top: 8px;
+}
+
+/* контейнер меню */
+.menu__box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  text-align: center;
+  background-color: #ECEFF1;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+}
+
+/* элементы меню */
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.menu__item:hover {
+  background-color: #CFD8DC;
+}
+
+#menu__toggle:checked~.menu__btn>span {
+  transform: rotate(45deg);
+}
+
+#menu__toggle:checked~.menu__btn>span::before {
+  top: 0;
+  transform: rotate(0);
+}
+
+#menu__toggle:checked~.menu__btn>span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menu__toggle:checked~.menu__box {
+  visibility: visible;
+  left: 0;
+}
+
+.menu__btn>span,
+.menu__btn>span::before,
+.menu__btn>span::after {
+  transition-duration: .25s;
+}
+
+.menu__box {
+  transition-duration: .25s;
+}
+
+.menu__item {
+  transition-duration: .25s;
+}
+
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+    7px 7px 20px 0px rgba(0, 0, 0, .1),
+    4px 4px 5px 0px rgba(0, 0, 0, .1);
+  outline: none;
+}
+
+/* 3 */
+.btn-3 {
+  background: rgb(0, 172, 238);
+  background: linear-gradient(0deg, rgba(0, 172, 238, 1) 0%, rgba(2, 126, 251, 1) 100%);
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+
+}
+
+.btn-3 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-3:before,
+.btn-3:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  background: rgba(2, 126, 251, 1);
+  transition: all 0.3s ease;
+}
+
+.btn-3:before {
+  height: 0%;
+  width: 2px;
+}
+
+.btn-3:after {
+  width: 0%;
+  height: 2px;
+}
+
+.btn-3:hover {
+  background: transparent;
+  box-shadow: none;
+}
+
+.btn-3:hover:before {
+  height: 100%;
+}
+
+.btn-3:hover:after {
+  width: 100%;
+}
+
+.btn-3 span:hover {
+  color: rgba(2, 126, 251, 1);
+}
+
+.btn-3 span:before,
+.btn-3 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  background: rgba(2, 126, 251, 1);
+  transition: all 0.3s ease;
+}
+
+.btn-3 span:before {
+  width: 2px;
+  height: 0%;
+}
+
+.btn-3 span:after {
+  width: 0%;
+  height: 2px;
+}
+
+.btn-3 span:hover:before {
+  height: 100%;
+}
+
+.btn-3 span:hover:after {
+  width: 100%;
+}
+
+.adaptivSlayder {
+  position: relative;
+  max-width: 710px;
+  margin: 65px auto;
+  box-shadow: 0 9px 18px -4px rgba(0, 0, 0, 0.69);
+}
+
+
+
+.adaptivSlayder input[name="kadoves"] {
+  display: none;
+}
+
+
+
+.kadoves {
+  position: absolute;
+  left: 0;
+  bottom: -35px;
+  text-align: center;
+  width: 100%;
+}
+
+
+
+.kadoves label {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  cursor: pointer;
+  margin: 0 2px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, .7);
+  border-radius: 55%;
+  border: 4px solid #2f363c;
+  background-color: #738290;
+}
+
+
+
+#slaid1:checked~.kadoves label[for="slaid1"] {
+  background-color: white;
+}
+
+
+
+#slaid2:checked~.kadoves label[for="slaid2"] {
+  background-color: white;
+}
+
+
+
+#slaid3:checked~.kadoves label[for="slaid3"] {
+  background-color: white;
+}
+#slaid4:checked~.kadoves label[for="slaid4"] {
+  background-color: white;
+}
+
+
+
+.adaptivSlayderlasekun {
+  overflow: hidden;
+}
+
+
+
+.abusteku-deagulus {
+  display: flex;
+  width: 100%;
+  transition: all 0.6s;
+}
+
+
+
+.abusteku-deagulus img {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+
+
+#slaid1:checked~adaptivSlayderlasekun abusteku-deagulus {
+  transform: translate(0);
+}
+
+#slaid2:checked~.adaptivSlayderlasekun .abusteku-deagulus {
+  transform: translateX(-100%);
+}
+
+#slaid3:checked~.adaptivSlayderlasekun .abusteku-deagulus {
+  transform: translateX(-200%);
+}
+#slaid4:checked~.adaptivSlayderlasekun .abusteku-deagulus {
+  transform: translateX(-300%);
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  color: #FFF;
+  font-size: 28px;
+  width: 372px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  color: #FFF;
+  font-size: 44px;
+  width: 246px;
+}
+
+
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  color: #FFF;
+  font-size: 28px;
+  width: 277px;
+}
+
+/* Bottom left text */
+.bottom-left1 {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  color: #FFF;
+  font-size: 28px;
+  width: 372px;
+}
+
+/* Top left text */
+.top-left1 {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  color: #FFF;
+  font-size: 44px;
+  width: 246px;
+}
+
+
+
+/* Bottom right text */
+.bottom-right1 {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  color: #FFF;
+  font-size: 28px;
+  width: 277px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+html,
+body {
+	height: 100%;
+}
+.content {
+	flex: 1 0 auto;
+}
+.footer {
+	flex: 0 0 auto;
+}
+.footercontainer {
+  height: 100%;
+  background: #87ceeb;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #000;
+}
